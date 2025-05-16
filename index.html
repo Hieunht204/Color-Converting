@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bộ chuyển đổi màu</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid all py-3 px-0 m-0 bg-light">
+      <div class="content-container px-3 mx-5 bg-white">
+        <div class="content-inner p-4">
+          <h1 class="text-black text-start">
+            <strong>Bộ chuyển đổi màu (RGB, HEX, CMYK, HSV, HSL)</strong>
+          </h1>
+
+          <div class="colorpicker-container mt-4">
+            <div>
+              <div
+                class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-2"
+              >
+                <div
+                  class="col col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 justify-content-start align-items-center d-flex flex-column "
+                >
+                  <div class="card w-100 mb-3">
+                    <div class="p-2 fs-5 bg-dark text-white">Mã HEX</div>
+                    <div class="card-body container align-self-center">
+                      <div class="row">
+                        <div class="col-auto d-flex align-items-center">
+                          <label for="tbHEX" class="form-label">HEX</label>
+                        </div>
+                        <div class="col">
+                          <input
+                            type="text"
+                            name=""
+                            id="tbHEX"
+                            class="form-control"
+                            maxlength="7"
+                            value="#28957f"
+                            pattern="^#+([a-fA-F0-9]{6})$"
+                            title="Nhập mã màu HEX"
+                            onchange="this.checkValidity() == false ? this.reportValidity() : true;"
+                            oninput="onColorInput(this)"
+                          />
+                        </div>
+                      </div>
+                      <div class="mt-3 m-2 p-2 rounded-2 border shadow">
+                        <input
+                          type="color"
+                          id="cvHEX"
+                          name="colorHex"
+                          title="Hexadecimal Color Code"
+                          class="w-100 border-0 shadow rounded"
+                          value="#28957f"
+                          style="min-height: 200px"
+                          oninput="onColorInput(this)"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8"
+                >
+                  <div
+                    class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2"
+                  >
+                    <div class="col mb-3">
+                      <div class="card">
+                        <div class="p-2 fs-5 bg-dark text-white">Mã RGB</div>
+                        <div class="card-body align-self-center">
+                          <div class="row gap-1">
+                            <div class="col d-flex flex-column">
+                              <label for="tbRGB_R" class="col form-label"
+                                >Red <br />(Đỏ)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbRGB_R"
+                                min="0"
+                                max="255"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgRGB_R"
+                                title="Red Color Value"
+                                min="0"
+                                max="255"
+                                step="1"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbRGB_G" class="col form-label"
+                                >Green <br />(Xanh lá)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbRGB_G"
+                                min="0"
+                                max="255"
+                                value="97"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgRGB_G"
+                                title="Green Color Value"
+                                min="0"
+                                max="255"
+                                step="1"
+                                value="97"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbRGB_B" class="col form-label"
+                                >Blue <br />(Xanh dương)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbRGB_B"
+                                min="0"
+                                max="255"
+                                value="149"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgRGB_B"
+                                title="Blue Color Value"
+                                min="0"
+                                max="255"
+                                step="1"
+                                value="149"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-2">
+                          <span class="row row-cols-auto p-1">
+                            <label
+                              for="txtRGB"
+                              class="col form-label d-flex align-items-center fw-bold"
+                              >RGB :</label
+                            >
+                            <span
+                              id="txtRGB"
+                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center"
+                              >36, 97, 149</span
+                            >
+                            &nbsp;&nbsp;
+                            <input
+                              type="color"
+                              name="colorHex"
+                              id="cvRGB"
+                              title="Color Picker"
+                              class="col form-control-color shadow rounded-2"
+                              value="#246195"
+                              oninput="onColorInput(this)"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3">
+                      <div class="card">
+                        <div class="p-2 fs-5 bg-dark text-white">Mã CMYK</div>
+                        <div class="card-body align-self-center text-start">
+                          <div class="row gap-1">
+                            <div class="col d-flex flex-column">
+                              <label
+                                for="tbCMYK_C"
+                                class="col form-label text-nowrap"
+                                >Cyan (%)<br />(Xanh lơ)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbCMYK_C"
+                                min="0"
+                                max="100"
+                                value="88"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgCMYK_C"
+                                title="Cyan Color Value"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="88"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbCMYK_M" class="col form-label"
+                                >Magenta (%)<br />(Hồng sẫm)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbCMYK_M"
+                                min="0"
+                                max="100"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgCMYK_M"
+                                title="Magenta Color Value"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbCMYK_Y" class="col form-label"
+                                >Yellow (%)<br />(Vàng)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbCMYK_Y"
+                                min="0"
+                                max="100"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgCMYK_Y"
+                                title="Yellow Color Value"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col mt-3">
+                              <label
+                                for="tbCMYK_K"
+                                class="col form-label text-nowrap"
+                                >Black (%) (Đen)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbCMYK_K"
+                                min="0"
+                                max="100"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgCMYK_K"
+                                title="Black Color Value"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-2">
+                          <span class="row row-cols-auto p-1">
+                            <label
+                              for="txtCMYK"
+                              class="col form-label d-flex align-items-center fw-bold"
+                              >CMYK :</label
+                            >
+                            <span
+                              id="txtCMYK"
+                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center"
+                              ></span
+                            >
+                            &nbsp;&nbsp;
+                            <input
+                              type="color"
+                              name="colorHex"
+                              id="cvCMYK"
+                              title="Color Picker"
+                              class="col form-control-color shadow rounded-2"
+                              value="#246195"
+                              oninput="onColorInput(this)"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3">
+                      <div class="card">
+                        <div class="p-2 fs-5 bg-dark text-white">Mã HSL</div>
+                        <div class="card-body align-self-center">
+                          <div class="row gap-1">
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSL_H" class="col form-label"
+                                >Hue <br />
+                                (0° - 359°)<br />(Màu)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSL_H"
+                                min="0"
+                                max="359"
+                                value="208"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSL_H"
+                                title="Hue Degree"
+                                min="0"
+                                max="359"
+                                step="1"
+                                value="208"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSL_S" class="col form-label"
+                                >Saturation (%)<br />(Độ bão hoà)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSL_S"
+                                min="0"
+                                max="100"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSL_S"
+                                title="Saturation Percentage"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSL_L" class="col form-label"
+                                >Lightness (%)<br />(Độ sáng)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSL_L"
+                                min="0"
+                                max="100"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSL_L"
+                                title="Lightness Percentage"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-2">
+                          <span class="row row-cols-auto p-1">
+                            <label
+                              for="txtHSL"
+                              class="col form-label d-flex align-items-center fw-bold"
+                              >HSL :</label
+                            >
+                            <span
+                              id="txtHSL"
+                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center"
+                              >208, 44%, 47%</span
+                            >
+                            &nbsp;&nbsp;
+                            <input
+                              type="color"
+                              name="colorHex"
+                              id="cvHSL"
+                              title="Color Picker"
+                              class="col form-control-color shadow rounded-2"
+                              value="#246195"
+                              oninput="onColorInput(this)"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col mb-3">
+                      <div class="card">
+                        <div class="p-2 fs-5 bg-dark text-white">Mã HSV</div>
+                        <div class="card-body align-self-center">
+                          <div class="row gap-1">
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSV_H" class="col form-label"
+                                >Hue <br />
+                                (0° - 359°)<br />(Màu)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSV_H"
+                                min="0"
+                                max="359"
+                                value="208"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSV_H"
+                                title="Hue Degree"
+                                min="0"
+                                max="359"
+                                step="1"
+                                value="208"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSV_S" class="col form-label"
+                                >Saturation (%)<br />(Độ bão hoà)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSV_S"
+                                min="0"
+                                max="100"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSV_S"
+                                title="Saturation Percentage"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="61"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                            <div class="col d-flex flex-column">
+                              <label for="tbHSV_V" class="col form-label"
+                                >Value (%)<br />(Giá trị)</label
+                              >
+                              <br />
+                              <input
+                                type="number"
+                                class="form-control"
+                                id="tbHSV_V"
+                                min="0"
+                                max="100"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                              <br />
+                              <input
+                                type="range"
+                                class="form-range"
+                                id="rgHSV_V"
+                                title="Value Percentage"
+                                min="0"
+                                max="100"
+                                step="1"
+                                value="36"
+                                oninput="onColorInput(this)"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-center pb-2">
+                          <span class="row row-cols-auto p-1">
+                            <label
+                              for="txtHSV"
+                              class="col form-label d-flex align-items-center fw-bold"
+                              >HSV :</label
+                            >
+                            <span
+                              id="txtHSV"
+                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center"
+                              >208, 61%, 68%</span
+                            >
+                            &nbsp;&nbsp;
+                            <input
+                              type="color"
+                              name="colorHex"
+                              id="cvHSV"
+                              title="Color Picker"
+                              class="col form-control-color shadow rounded-2"
+                              value="#246195"
+                              oninput="onColorInput(this)"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
