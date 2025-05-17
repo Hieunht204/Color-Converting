@@ -1,10 +1,12 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  font-size: 15px;
 }
 
 .all {
 }
+
 
 #colorBox {
   -webkit-appearance: none; 

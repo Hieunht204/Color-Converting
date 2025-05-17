@@ -407,6 +407,64 @@ function onColorInput() {
       updateFromRgb(r, g, b);
     });
   });
+
+  if (!originalImageData) return;
+
+  const rOffset = parseInt(document.getElementById('tbRGB_R').value);
+  const gOffset = parseInt(document.getElementById('tbRGB_G').value);
+  const bOffset = parseInt(document.getElementById('tbRGB_B').value);
+
+  const imageData = new ImageData(
+    new Uint8ClampedArray(originalImageData.data),
+    originalImageData.width,
+    originalImageData.height
+  );
+
+  for (let i = 0; i < imageData.data.length; i += 4) {
+    imageData.data[i] = clamp(imageData.data[i] + rOffset, 0, 255);     // Red
+    imageData.data[i + 1] = clamp(imageData.data[i + 1] + gOffset, 0, 255); // Green
+    imageData.data[i + 2] = clamp(imageData.data[i + 2] + bOffset, 0, 255); // Blue
+    // Alpha (i+3) giữ nguyên
+  }
+
+  ctx.putImageData(imageData, 0, 0);
 }
+
+const fileInput = document.getElementById('upload-image');
+const canvas = document.getElementById('image-canvas');
+const ctx = canvas.getContext('2d');
+let originalImageData = null; 
+
+fileInput.addEventListener('change', function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    const img = new Image();
+    img.onload = function () {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height); // Lưu bản gốc
+    };
+    img.src = event.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+
+function clamp(val, min, max) {
+  return Math.max(min, Math.min(max, val));
+}
+
+document.getElementById('download-btn').addEventListener('click', function () {
+  const canvas = document.getElementById('image-canvas');
+  const image = canvas.toDataURL('image/png'); // hoặc 'image/jpeg'
+  
+  const link = document.createElement('a');
+  link.href = image;
+  link.download = 'anh-da-chinh.png';
+  link.click();
+});
 
 window.addEventListener("DOMContentLoaded", onColorInput);
