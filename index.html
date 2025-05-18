@@ -9,7 +9,14 @@
   <body>
     <div class="container-fluid all py-3 px-0 m-0 bg-light">
       <div class="content-container px-3 mx-5 bg-white">
-        <div class="content-inner p-4">
+        <button
+          onclick="switchMode()"
+          class="btn btn-primary mb-3"
+          id="switch-btn"
+        >
+          Chuyển sang chế độ Hiển thị phiên bản màu
+        </button>
+        <div id="mode-1" class="content-inner p-4">
           <h1 class="text-black text-start">
             <strong>Bộ chuyển đổi màu (RGB, HEX, CMYK, HSV, HSL)</strong>
           </h1>
@@ -66,8 +73,9 @@
                         id="image-canvas"
                         style="max-width: 100%"
                       ></canvas>
-                      <button id="download-btn" class="btn btn-primary mt-3">Tải ảnh đã chỉnh</button>
-
+                      <button id="download-btn" class="btn btn-primary mt-3">
+                        Tải ảnh đã chỉnh
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -172,7 +180,7 @@
                               name="colorHex"
                               id="cvRGB"
                               title="Color Picker"
-                              class="col form-control-color shadow rounded-2 "
+                              class="col form-control-color shadow rounded-2"
                               value="#000000"
                               oninput="onColorInput(this)"
                             />
@@ -193,10 +201,8 @@
                           <div class="row gap-1 justify-content-center">
                             <div class="row row-cols-3">
                               <div class="col d-flex flex-column">
-                                <label
-                                  for="tbCMYK_C"
-                                  class="col form-label"
-                                  >Cyan <br>(%)<br />(Xanh lơ)</label
+                                <label for="tbCMYK_C" class="col form-label"
+                                  >Cyan <br />(%)<br />(Xanh lơ)</label
                                 >
                                 <br />
                                 <input
@@ -223,7 +229,7 @@
                               </div>
                               <div class="col d-flex flex-column">
                                 <label for="tbCMYK_M" class="col form-label"
-                                  >Magenta <br>(%)<br />(Hồng sẫm)</label
+                                  >Magenta <br />(%)<br />(Hồng sẫm)</label
                                 >
                                 <br />
                                 <input
@@ -250,7 +256,7 @@
                               </div>
                               <div class="col d-flex flex-column">
                                 <label for="tbCMYK_Y" class="col form-label"
-                                  >Yellow <br>(%)<br />(Vàng)</label
+                                  >Yellow <br />(%)<br />(Vàng)</label
                                 >
                                 <br />
                                 <input
@@ -277,7 +283,9 @@
                               </div>
                             </div>
                             <div class="row mt-3 px-3">
-                              <label for="tbCMYK_K" class="col form-label p-0 text-start"
+                              <label
+                                for="tbCMYK_K"
+                                class="col form-label p-0 text-start"
                                 >Black (%) (Đen)</label
                               >
                               <br />
@@ -361,7 +369,7 @@
                             </div>
                             <div class="col d-flex flex-column">
                               <label for="tbHSL_S" class="col form-label"
-                                >Saturation <br>(%)<br />(Độ bão hoà)</label
+                                >Saturation <br />(%)<br />(Độ bão hoà)</label
                               >
                               <br />
                               <input
@@ -388,7 +396,7 @@
                             </div>
                             <div class="col d-flex flex-column">
                               <label for="tbHSL_L" class="col form-label"
-                                >Lightness <br>(%)<br />(Độ sáng)</label
+                                >Lightness <br />(%)<br />(Độ sáng)</label
                               >
                               <br />
                               <input
@@ -418,13 +426,13 @@
                         <div class="d-flex justify-content-center pb-2">
                           <span class="row row-cols-auto p-1">
                             <input
-                            type="color"
-                            name="colorHex"
-                            id="cvHSL"
-                            title="Color Picker"
-                            class="col form-control-color shadow rounded-2"
-                            value="#000000"
-                            oninput="onColorInput(this)"
+                              type="color"
+                              name="colorHex"
+                              id="cvHSL"
+                              title="Color Picker"
+                              class="col form-control-color shadow rounded-2"
+                              value="#000000"
+                              oninput="onColorInput(this)"
                             />
                             &nbsp;&nbsp;
                             <span
@@ -471,7 +479,7 @@
                             </div>
                             <div class="col d-flex flex-column">
                               <label for="tbHSV_S" class="col form-label"
-                                >Saturation <br>(%)<br />(Độ bão hoà)</label
+                                >Saturation <br />(%)<br />(Độ bão hoà)</label
                               >
                               <br />
                               <input
@@ -498,7 +506,7 @@
                             </div>
                             <div class="col d-flex flex-column">
                               <label for="tbHSV_V" class="col form-label"
-                                >Value <br>(%)<br />(Giá trị)</label
+                                >Value <br />(%)<br />(Giá trị)</label
                               >
                               <br />
                               <input
@@ -552,10 +560,44 @@
             </div>
           </div>
         </div>
+        <div id="mode-2" class="content-inner p-4" style="display: none">
+          <h1 class="text-black text-start">
+            <strong
+              >Hiển thị ảnh theo từng hệ màu (RGB, CMYK, HSV, HSL, YIQ)</strong
+            >
+          </h1>
+
+          <div class="mb-3">
+            <input
+              type="file"
+              id="upload-image-mode2"
+              accept="image/*"
+              class="form-control"
+              onchange="handleImageDisplay()"
+            />
+          </div>
+
+          <div class="mb-3">
+            <select
+              id="color-model-select"
+              class="form-select"
+              onchange="handleImageDisplay()"
+            >
+              <option value="RGB">RGB</option>
+              <option value="CMYK">CMYK</option>
+              <option value="HSL">HSL</option>
+              <option value="HSV">HSV</option>
+              <option value="YIQ">YIQ</option>
+            </select>
+          </div>
+
+          <div id="color-version-container" class="row gy-3"></div>
+        </div>
       </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/colorConverter.sync.js"></script>
+    <script src="js/colorConverter.image.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

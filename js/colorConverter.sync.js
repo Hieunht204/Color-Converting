@@ -459,12 +459,13 @@ function clamp(val, min, max) {
 
 document.getElementById('download-btn').addEventListener('click', function () {
   const canvas = document.getElementById('image-canvas');
-  const image = canvas.toDataURL('image/png'); // hoặc 'image/jpeg'
+  const image = canvas.toDataURL('image/png'); 
   
   const link = document.createElement('a');
   link.href = image;
   link.download = 'anh-da-chinh.png';
   link.click();
 });
+
 
 window.addEventListener("DOMContentLoaded", onColorInput);
