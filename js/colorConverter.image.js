@@ -1,7 +1,7 @@
 let currentMode = 1;
 
 function switchMode() {
-  currentMode = 3 - currentMode; // toggle between 1 and 2
+  currentMode = 3 - currentMode; 
 
   document.getElementById("mode-1").style.display =
     currentMode === 1 ? "block" : "none";
@@ -10,8 +10,8 @@ function switchMode() {
 
   document.getElementById("switch-btn").textContent =
     currentMode === 1
-      ? "Chuyển sang chế độ Hiển thị phiên bản màu"
-      : "Chuyển sang chế độ Điều chỉnh màu";
+      ? "Chuyển sang chế độ Tách kênh màu"
+      : "Chuyển sang chế độ Đồng bộ màu";
 }
 
 function handleImageDisplay() {
@@ -43,7 +43,6 @@ function handleImageDisplay() {
       height
     );
 
-    // gọi hàm tạo các ảnh theo từng kênh màu
     const channelImages = convertColorModelImageMode(cloned, model);
     const channels = getColorChannelsImageMode(model);
 
@@ -54,7 +53,7 @@ function handleImageDisplay() {
       wrapper.className = "col-3";
 
       const label = document.createElement("h6");
-      label.textContent = `${channels[idx]} channel of ${model.toUpperCase()}`;
+      label.textContent = `Kênh ${channels[idx]} của ${model.toUpperCase()}`;
       wrapper.appendChild(label);
 
       const canvas = document.createElement("canvas");
@@ -199,7 +198,7 @@ function rgbToHslImage(r, g, b) {
     l = (max + min) / 2;
 
   if (max === min) {
-    h = s = 0; // achromatic
+    h = s = 0; 
   } else {
     const d = max - min;
     s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
@@ -258,7 +257,7 @@ function hslToRgbImage(h, s, l) {
   let r, g, b;
 
   if (s === 0) {
-    r = g = b = l; // achromatic
+    r = g = b = l; 
   } else {
     function hue2rgb(p, q, t) {
       if (t < 0) t += 1;

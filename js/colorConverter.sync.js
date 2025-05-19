@@ -113,7 +113,6 @@ function cmykToRgb(c, m, y, k) {
   let g = 255 * (1 - m) * (1 - k);
   let b = 255 * (1 - y) * (1 - k);
 
-  // Clamp RGB to [0, 255]
   r = Math.round(Math.min(Math.max(r, 0), 255));
   g = Math.round(Math.min(Math.max(g, 0), 255));
   b = Math.round(Math.min(Math.max(b, 0), 255));
@@ -186,7 +185,7 @@ function rgbToCmyk(r, g, b) {
   const rPrime = r / 255, gPrime = g / 255, bPrime = b / 255;
   const k = 1 - Math.max(rPrime, gPrime, bPrime);
 
-  if (k === 1) return { c: 0, m: 0, y: 0, k: 100 }; // black
+  if (k === 1) return { c: 0, m: 0, y: 0, k: 100 }; 
 
   const c = ((1 - rPrime - k) / (1 - k)) * 100;
   const m = ((1 - gPrime - k) / (1 - k)) * 100;
@@ -283,7 +282,7 @@ function updateFromRgb(r, g, b) {
   rgb.g.input.value = rgb.g.slider.value = g;
   rgb.b.input.value = rgb.b.slider.value = b;
 
-  rgb.text.textContent = `rgb(${r}, ${g}, ${b})`;
+  rgb.text.value = `rgb(${r}, ${g}, ${b})`;
   rgb.picker.value = hexValue;
 
   // CMYK
@@ -293,7 +292,7 @@ function updateFromRgb(r, g, b) {
   cmyk.y.input.value = cmyk.y.slider.value = y;
   cmyk.k.input.value = cmyk.k.slider.value = k;
 
-  cmyk.text.textContent = `cmyk(${c}%, ${m}%, ${y}%, ${k}%)`;
+  cmyk.text.value = `cmyk(${c}%, ${m}%, ${y}%, ${k}%)`;
   cmyk.picker.value = hexValue;
 
   // HSL
@@ -302,7 +301,7 @@ function updateFromRgb(r, g, b) {
   hsl.s.input.value = hsl.s.slider.value = s;
   hsl.l.input.value = hsl.l.slider.value = l;
 
-  hsl.text.textContent = `hsl(${h}°, ${s}%, ${l}%)`;
+  hsl.text.value = `hsl(${h}°, ${s}%, ${l}%)`;
   hsl.picker.value = hexValue;
 
   // HSV
@@ -311,7 +310,7 @@ function updateFromRgb(r, g, b) {
   hsv.s.input.value = hsv.s.slider.value = hsvS;
   hsv.v.input.value = hsv.v.slider.value = hsvV;
 
-  hsv.text.textContent = `hsv(${hsvH}°, ${hsvS}%, ${hsvV}%)`;
+  hsv.text.value = `hsv(${hsvH}°, ${hsvS}%, ${hsvV}%)`;
   hsv.picker.value = hexValue;
 
 }
@@ -320,6 +319,42 @@ function updateFromCmyk(c, m, y, k) {
   const { r, g, b } = cmykToRgb(c, m, y, k);
   updateFromRgb(r, g, b);
 }
+
+function updateFromHsl(h, s, l) {
+  const { r, g, b } = hslToRgb(h, s, l);
+  updateFromRgb(r, g, b);
+}
+
+function updateFromHsv(h, s, v) {
+  const { r, g, b } = hsvToRgb(h, s, v);
+  updateFromRgb(r, g, b);
+}
+
+rgb.picker.addEventListener("input", () => {
+  const hexValue = rgb.picker.value;
+  const { r, g, b } = hexToRgb(hexValue);
+  updateFromRgb(r, g, b);
+});
+
+cmyk.picker.addEventListener("input", () => {
+  const hexValue = cmyk.picker.value;
+  const { r, g, b } = hexToRgb(hexValue);
+  updateFromRgb(r, g, b);
+});
+
+hsl.picker.addEventListener("input", () => {
+  const hexValue = hsl.picker.value;
+  const { r, g, b } = hexToRgb(hexValue);
+  updateFromRgb(r, g, b);
+});
+
+hsv.picker.addEventListener("input", () => {
+  const hexValue = hsv.picker.value;
+  const { r, g, b } = hexToRgb(hexValue);
+  updateFromRgb(r, g, b);
+});
+
+
 
 function onColorInput() {
   // HEX 
@@ -376,16 +411,14 @@ function onColorInput() {
       const h = parseInt(hsl.h.input.value) || 0;
       const s = parseInt(hsl.s.input.value) || 0;
       const l = parseInt(hsl.l.input.value) || 0;
-      const { r, g, b } = hslToRgb(h, s, l);
-      updateFromRgb(r, g, b);
+      updateFromHsl(h, s, l);
     });
 
     hsl[ch].slider.addEventListener("input", () => {
       const h = parseInt(hsl.h.slider.value);
       const s = parseInt(hsl.s.slider.value);
       const l = parseInt(hsl.l.slider.value);
-      const { r, g, b } = hslToRgb(h, s, l);
-      updateFromRgb(r, g, b);
+      updateFromHsl(h, s, l);
     });
   });
 
@@ -395,16 +428,14 @@ function onColorInput() {
       const h = parseInt(hsv.h.input.value) || 0;
       const s = parseInt(hsv.s.input.value) || 0;
       const v = parseInt(hsv.v.input.value) || 0;
-      const { r, g, b } = hsvToRgb(h, s, v);
-      updateFromRgb(r, g, b);
+      updateFromHsv(h, s, v);
     });
 
     hsv[ch].slider.addEventListener("input", () => {
       const h = parseInt(hsv.h.slider.value);
       const s = parseInt(hsv.s.slider.value);
       const v = parseInt(hsv.v.slider.value);
-      const { r, g, b } = hsvToRgb(h, s, v);
-      updateFromRgb(r, g, b);
+      updateFromHsv(h, s, v);
     });
   });
 
@@ -424,7 +455,6 @@ function onColorInput() {
     imageData.data[i] = clamp(imageData.data[i] + rOffset, 0, 255);     // Red
     imageData.data[i + 1] = clamp(imageData.data[i + 1] + gOffset, 0, 255); // Green
     imageData.data[i + 2] = clamp(imageData.data[i + 2] + bOffset, 0, 255); // Blue
-    // Alpha (i+3) giữ nguyên
   }
 
   ctx.putImageData(imageData, 0, 0);
@@ -446,7 +476,7 @@ fileInput.addEventListener('change', function (e) {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height); // Lưu bản gốc
+      originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height); 
     };
     img.src = event.target.result;
   };
@@ -459,13 +489,32 @@ function clamp(val, min, max) {
 
 document.getElementById('download-btn').addEventListener('click', function () {
   const canvas = document.getElementById('image-canvas');
-  const image = canvas.toDataURL('image/png'); 
+  const ctx = canvas.getContext('2d');
+  const width = canvas.width;
+  const height = canvas.height;
   
+  const imgData = ctx.getImageData(0, 0, width, height).data;
+  
+  let hasImage = false;
+  for (let i = 3; i < imgData.length; i += 4) { // alpha channel
+    if (imgData[i] !== 0) {
+      hasImage = true;
+      break;
+    }
+  }
+
+  if (!hasImage) {
+    alert('Không có ảnh để tải xuống!');
+    return;
+  }
+
+  const image = canvas.toDataURL('image/png'); 
   const link = document.createElement('a');
   link.href = image;
-  link.download = 'anh-da-chinh.png';
+  link.download = 'edited.png';
   link.click();
 });
+
 
 
 window.addEventListener("DOMContentLoaded", onColorInput);

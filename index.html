@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Bộ chuyển đổi màu</title>
+    <title>Color Converting</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container-fluid all py-3 px-0 m-0 bg-light">
-      <div class="content-container px-3 mx-5 bg-white">
+    <div class="container-fluid all py-0 py-sm-0 py-md-3 py-lg-3 py-xl-3 py-xxl-3 px-0 m-0 bg-light">
+      <div class="content-container px-3 mx-0 mx-sm-0 mx-md-5 mx-lg-5 mx-xl-5 mx-xxl-5 bg-white shadow rounded">
         <button
           onclick="switchMode()"
-          class="btn btn-primary mb-3"
+          class="btn btn-primary my-3"
           id="switch-btn"
         >
-          Chuyển sang chế độ Hiển thị phiên bản màu
+          Chuyển sang chế độ Tách kênh màu
         </button>
         <div id="mode-1" class="content-inner p-4">
-          <h1 class="text-black text-start">
-            <strong>Bộ chuyển đổi màu (RGB, HEX, CMYK, HSV, HSL)</strong>
+          <h1 class="text-black text-center">
+            <strong>Đồng bộ màu (RGB, HEX, CMYK, HSL, HSV)</strong>
           </h1>
 
           <div class="colorpicker-container mt-4">
@@ -74,7 +74,7 @@
                         style="max-width: 100%"
                       ></canvas>
                       <button id="download-btn" class="btn btn-primary mt-3">
-                        Tải ảnh đã chỉnh
+                        Tải ảnh
                       </button>
                     </div>
                   </div>
@@ -185,11 +185,11 @@
                               oninput="onColorInput(this)"
                             />
                             &nbsp;&nbsp;
-                            <span
+                            <input
                               id="txtRGB"
-                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center m-0"
-                              >rgb(0, 0, 0)</span
-                            >
+                              class="col px-2 rounded text-center align-items-center m-0"
+                              value="rgb(0, 0, 0)"
+                            />
                           </span>
                         </div>
                       </div>
@@ -325,11 +325,11 @@
                               oninput="onColorInput(this)"
                             />
                             &nbsp;&nbsp;
-                            <span
+                            <input
                               id="txtCMYK"
-                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center m-0"
-                              >cmyk(0%, 0%, 0%, 100%)</span
-                            >
+                              class="col px-2 rounded text-center align-items-center m-0"
+                              value="cmyk(0%, 0%, 0%, 100%)" 
+                            />
                           </span>
                         </div>
                       </div>
@@ -435,11 +435,11 @@
                               oninput="onColorInput(this)"
                             />
                             &nbsp;&nbsp;
-                            <span
+                            <input
                               id="txtHSL"
-                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center m-0"
-                              >hsl(0°, 0%, 0%)</span
-                            >
+                              class="col px-2 rounded text-center align-items-center m-0"
+                              value="hsl(0°, 0%, 0%)" 
+                            />
                           </span>
                         </div>
                       </div>
@@ -545,11 +545,11 @@
                               oninput="onColorInput(this)"
                             />
                             &nbsp;&nbsp;
-                            <span
+                            <input
                               id="txtHSV"
-                              class="col form-label px-2 rounded-2 text-center d-flex align-items-center m-0"
-                              >hsv(0°, 0%, 0%)</span
-                            >
+                              class="col px-2 rounded text-center align-items-center m-0"
+                              value="hsv(0°, 0%, 0%)" 
+                            />
                           </span>
                         </div>
                       </div>
@@ -561,13 +561,13 @@
           </div>
         </div>
         <div id="mode-2" class="content-inner p-4" style="display: none">
-          <h1 class="text-black text-start">
+          <h1 class="text-black text-center">
             <strong
-              >Hiển thị ảnh theo từng hệ màu (RGB, CMYK, HSV, HSL, YIQ)</strong
+              >Tách kênh màu (RGB, CMYK, HSL, HSV, YIQ)</strong
             >
           </h1>
 
-          <div class="mb-3">
+          <div class="mb-3 mt-4">
             <input
               type="file"
               id="upload-image-mode2"
@@ -591,7 +591,7 @@
             </select>
           </div>
 
-          <div id="color-version-container" class="row gy-3"></div>
+          <div id="color-version-container" class="row gy-3 justify-content-center"></div>
         </div>
       </div>
     </div>
