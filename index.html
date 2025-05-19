@@ -7,15 +7,67 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container-fluid all py-0 py-sm-0 py-md-3 py-lg-3 py-xl-3 py-xxl-3 px-0 m-0 bg-light">
-      <div class="content-container px-3 mx-0 mx-sm-0 mx-md-5 mx-lg-5 mx-xl-5 mx-xxl-5 bg-white shadow rounded">
-        <button
-          onclick="switchMode()"
-          class="btn btn-primary my-3"
-          id="switch-btn"
+    <div
+      class="container-fluid all py-0 py-sm-0 py-md-5 py-lg-5 py-xl-5 py-xxl-5 px-0 m-0 bg-light"
+    >
+      <div
+        class="content-container p-0 mx-0 mx-sm-0 mx-md-5 mx-lg-5 mx-xl-5 mx-xxl-5 bg-white shadow rounded"
+      >
+        <div
+          class="container d-inline-flex justify-content-center align-items-center px-3 px-sm-3  mt-4"
         >
-          Chuyển sang chế độ Tách kênh màu
-        </button>
+          <div class="d-flex row row-cols-auto gap-2 mx-1 mx-sm-1 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 justify-content-center align-items-center">
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalHEX"
+            >
+              HEX
+            </button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalRGB"
+            >
+              RGB
+            </button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalCMYK"
+            >
+              CMYK
+            </button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalHSL"
+            >
+              HSL
+            </button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalHSV"
+            >
+              HSV
+            </button>
+            <button
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#modalYIQ"
+            >
+              YIQ
+            </button>
+          </div>
+          <button
+            onclick="switchMode()"
+            class="btn btn-primary mx-1 mx-sm-1 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2"
+            id="switch-btn"
+          >
+            Chuyển sang chế độ Tách kênh màu
+          </button>
+        </div>
         <div id="mode-1" class="content-inner p-4">
           <h1 class="text-black text-center">
             <strong>Đồng bộ màu (RGB, HEX, CMYK, HSL, HSV)</strong>
@@ -328,7 +380,7 @@
                             <input
                               id="txtCMYK"
                               class="col px-2 rounded text-center align-items-center m-0"
-                              value="cmyk(0%, 0%, 0%, 100%)" 
+                              value="cmyk(0%, 0%, 0%, 100%)"
                             />
                           </span>
                         </div>
@@ -438,7 +490,7 @@
                             <input
                               id="txtHSL"
                               class="col px-2 rounded text-center align-items-center m-0"
-                              value="hsl(0°, 0%, 0%)" 
+                              value="hsl(0°, 0%, 0%)"
                             />
                           </span>
                         </div>
@@ -548,7 +600,7 @@
                             <input
                               id="txtHSV"
                               class="col px-2 rounded text-center align-items-center m-0"
-                              value="hsv(0°, 0%, 0%)" 
+                              value="hsv(0°, 0%, 0%)"
                             />
                           </span>
                         </div>
@@ -562,9 +614,7 @@
         </div>
         <div id="mode-2" class="content-inner p-4" style="display: none">
           <h1 class="text-black text-center">
-            <strong
-              >Tách kênh màu (RGB, CMYK, HSL, HSV, YIQ)</strong
-            >
+            <strong>Tách kênh màu (RGB, CMYK, HSL, HSV, YIQ)</strong>
           </h1>
 
           <div class="mb-3 mt-4">
@@ -591,7 +641,10 @@
             </select>
           </div>
 
-          <div id="color-version-container" class="row gy-3 justify-content-center"></div>
+          <div
+            id="color-version-container"
+            class="row gy-3 justify-content-center"
+          ></div>
         </div>
       </div>
     </div>
@@ -600,4 +653,168 @@
     <script src="js/colorConverter.image.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
+
+  <!-- Modal Template -->
+  <div
+    class="modal fade"
+    id="modalHEX"
+    tabindex="-1"
+    aria-labelledby="modalHEXLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalHEXLabel">Mô hình màu HEX</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          HEX là cách biểu diễn màu bằng hệ thập lục phân (hexadecimal), thường
+          dùng trong thiết kế web. Mỗi màu được thể hiện bằng 6 ký tự đại diện
+          cho 3 kênh màu: đỏ, xanh lá, xanh dương (RGB).
+          <br /><strong>Ví dụ:</strong> #FF0000 là màu đỏ.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalRGB"
+    tabindex="-1"
+    aria-labelledby="modalRGBLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRGBLabel">Mô hình màu RGB</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          RGB (Red, Green, Blue) là mô hình màu cộng, mỗi kênh có giá trị từ 0
+          đến 255. Được dùng phổ biến trên màn hình máy tính, điện thoại và TV.
+          <br /><strong>Ví dụ:</strong> rgb(255, 0, 0) là màu đỏ.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalCMYK"
+    tabindex="-1"
+    aria-labelledby="modalCMYKLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCMYKLabel">Mô hình màu CMYK</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          CMYK là mô hình màu trừ, gồm các kênh: Cyan (Xanh lơ), Magenta (Hồng),
+          Yellow (Vàng) và Key (Đen). Dùng phổ biến trong in ấn.
+          <br /><strong>Ví dụ:</strong> cmyk(0%, 100%, 100%, 0%) là màu đỏ.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalHSL"
+    tabindex="-1"
+    aria-labelledby="modalHSLLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalHSLLabel">Mô hình màu HSL</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          HSL là viết tắt của Hue (sắc độ), Saturation (độ bão hòa), Lightness
+          (độ sáng). Dễ điều chỉnh và trực quan hơn RGB trong một số ứng dụng
+          thiết kế.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalHSV"
+    tabindex="-1"
+    aria-labelledby="modalHSVLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalHSVLabel">Mô hình màu HSV</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          HSV gồm Hue (sắc), Saturation (bão hòa), Value (giá trị độ sáng).
+          Tương tự HSL nhưng cách xác định độ sáng khác, dùng trong xử lý ảnh và
+          phần mềm đồ họa.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalYIQ"
+    tabindex="-1"
+    aria-labelledby="modalYIQLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalYIQLabel">Mô hình màu YIQ</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          YIQ là mô hình dùng trong truyền hình analog của Mỹ. Bao gồm Y (độ
+          sáng), I và Q (thông tin màu). Y cho phép hiển thị trắng đen tốt trên
+          TV đen trắng.
+        </div>
+      </div>
+    </div>
+  </div>
 </html>
