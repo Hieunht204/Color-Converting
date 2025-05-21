@@ -22,3 +22,19 @@ body {
   border: none;
   border-radius: 5px;
 }
+
+.text-justify-custom {
+    text-align: justify;
+  }
+
+.custom-img {
+    max-width: 100%;
+    height: auto;      
+    width: 300px;      
+  }
+
+  @media (max-width: 576px) {
+    .custom-img {
+      width: 100px;     
+    }
+  }

@@ -14,9 +14,11 @@
         class="content-container p-0 mx-0 mx-sm-0 mx-md-5 mx-lg-5 mx-xl-5 mx-xxl-5 bg-white shadow rounded"
       >
         <div
-          class="container d-inline-flex justify-content-center align-items-center px-3 px-sm-3  mt-4"
+          class="container d-inline-flex justify-content-center align-items-center px-3 px-sm-3 mt-4"
         >
-          <div class="d-flex row row-cols-auto gap-2 mx-1 mx-sm-1 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 justify-content-center align-items-center">
+          <div
+            class="d-flex row row-cols-auto gap-2 mx-1 mx-sm-1 mx-md-2 mx-lg-2 mx-xl-2 mx-xxl-2 justify-content-center align-items-center"
+          >
             <button
               class="btn btn-secondary"
               data-bs-toggle="modal"
@@ -662,10 +664,10 @@
     aria-labelledby="modalHEXLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalHEXLabel">Mô hình màu HEX</h5>
+          <h5 class="modal-title" id="modalHEXLabel">Mô hình màu HEX - Mã hoá sắc màu trong thế giới số</h5>
           <button
             type="button"
             class="btn-close"
@@ -673,11 +675,143 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          HEX là cách biểu diễn màu bằng hệ thập lục phân (hexadecimal), thường
-          dùng trong thiết kế web. Mỗi màu được thể hiện bằng 6 ký tự đại diện
-          cho 3 kênh màu: đỏ, xanh lá, xanh dương (RGB).
-          <br /><strong>Ví dụ:</strong> #FF0000 là màu đỏ.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Trong thiết kế số và phát triển web hiện đại, màu sắc không chỉ
+              đóng vai trò thẩm mỹ mà còn là một phương tiện giao tiếp thị giác
+              mạnh mẽ, ảnh hưởng đến trải nghiệm và cảm xúc của người dùng. Để
+              hiển thị chính xác các màu sắc này trên màn hình, hệ thống cần một
+              phương thức mã hóa cụ thể. Trong số đó, <b>mã màu HEX</b> (viết
+              tắt của <i>hexadecimal</i>) là một trong những cách biểu diễn màu
+              phổ biến và hiệu quả nhất hiện nay. <br /><br />
+              Điều đặc biệt ở mô hình HEX không chỉ nằm ở tính kỹ thuật, mà còn
+              ở khả năng gợi cảm xúc và xây dựng bản sắc hình ảnh chỉ bằng một
+              chuỗi sáu ký tự. Mỗi mã màu là sự kết hợp tinh tế giữa toán học và
+              mỹ thuật, là cây cầu nối giữa lập trình viên và nhà thiết kế - hai
+              thế giới tưởng chừng như đối lập. 
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              Một mã HEX gồm sáu ký tự, bắt đầu bằng dấu #, trong đó ba cặp ký
+              tự lần lượt đại diện cho ba thành phần màu cơ bản trong hệ RGB: đỏ
+              (Red), xanh lá (Green) và xanh dương (Blue). Mỗi cặp ký tự thể
+              hiện một giá trị trong hệ cơ số 16, tương đương với giá trị từ 0
+              đến 255 trong hệ thập phân. <br><br>
+              Ví dụ: 
+              <ul style="list-style-type:disc">
+                <li>#FF0000 biểu thị màu đỏ tươi (255, 0, 0).</li>
+                <li>#00FF00 là màu xanh lá (0, 255, 0).</li>
+                <li>#0000FF là xanh dương thuần (0, 0, 255).</li>
+                <li>#FFFFFF là màu trắng - khi cả ba kênh đều đạt giá trị tối đa.</li>
+                <li>#000000 là màu đen hoàn toàn - khi cả ba kênh đều bằng 0.</li>
+              </ul> <br>
+              Một điểm thú vị là trong một số trường hợp đặc biệt, các mã HEX có thể được viết rút gọn bằng cách lược bỏ một nửa ký tự nếu ba cặp giống nhau. Ví dụ, #FFCC00 có thể được viết thành #FC0 - một cú pháp rút gọn được hỗ trợ trong CSS, giúp tiết kiệm không gian mã và thao tác nhanh hơn. 
+            </p>
+
+            <strong>
+              <li>Ưu điểm và lý do phổ biến</li>
+            </strong>
+            <p>
+              Mô hình HEX được ưa chuộng rộng rãi trong phát triển giao diện và thiết kế web nhờ những ưu điểm nổi bật:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Ngắn gọn, chính xác: </strong>Chỉ cần sáu ký tự là có thể xác định một màu cụ thể, thay vì mô tả dài dòng bằng lời.
+                </li>
+                <li>
+                  <strong>Tương thích rộng rãi:  </strong>Các ngôn ngữ như HTML, CSS và hầu hết phần mềm thiết kế hiện nay đều hỗ trợ mã HEX.
+                </li>
+                <li>
+                  <strong>Biểu diễn đa dạng:   </strong>HEX có thể mã hóa hơn 16 triệu màu, đủ đáp ứng mọi nhu cầu thị giác trong môi trường số.
+                </li>
+              </ul>
+              <br>
+              Điều đáng nói là nhiều thương hiệu lớn cũng gắn liền với các mã HEX đặc trưng, trở thành một phần không thể thiếu trong bộ nhận diện thương hiệu. Ví dụ, màu xanh đặc trưng của Facebook là #1877F2, hay màu đỏ quen thuộc của Coca-Cola là #F40009.
+            </p>
+            <div class="container d-flex justify-content-evenly align-items-center flex-wrap gap-3 my-4">
+              <img src="/img/hex-facebook.png" alt="facebook" class="img-fluid custom-img">
+              <img src="/img/hex-coca.png" alt="coca-cola" class="img-fluid custom-img">
+            </div>
+
+            <strong>
+              <li>Hạn chế khi sử dụng</li>
+            </strong>
+            <p>
+              Dù sở hữu nhiều ưu điểm, mô hình HEX vẫn tồn tại một số hạn chế:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Không trực quan đối với người mới học: </strong>Việc đọc hiểu hoặc điều chỉnh mã màu trong hệ 16 có thể gây khó khăn cho người chưa quen.
+                </li>
+                <li>
+                  <strong>Thiếu khả năng thao tác trực tiếp theo cảm nhận màu sắc: </strong>So với mô hình HSV (nơi người dùng có thể điều chỉnh sắc độ, độ sáng và độ bão hòa), HEX yêu cầu người dùng có sự hỗ trợ từ công cụ chuyển đổi để chỉnh sửa trực quan.
+                </li>
+              </ul>
+              <br>
+              Tuy nhiên, những hạn chế này thường được khắc phục dễ dàng nhờ vào các phần mềm thiết kế hoặc trình chỉnh mã màu trực tuyến hiện nay.
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về mã màu HEX</li>
+            </strong>
+            <p>
+              Không chỉ là một định dạng kỹ thuật, mã HEX còn mang trong mình nhiều khía cạnh thú vị đáng chú ý:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>HEX là “ngôn ngữ chung” của lập trình viên và nhà thiết kế: </strong>Một mã màu duy nhất như #3498DB có thể được dùng đồng nhất trong CSS, Figma, Android, Photoshop, iOS,...
+                </li>
+                <li>
+                  <strong>Có thể “vẽ” bằng HEX: </strong>Một số nghệ sĩ kỹ thuật số đã dùng mã HEX để tạo nên các tác phẩm nghệ thuật dạng pixel bằng HTML/CSS mà không cần dùng hình ảnh.
+                  <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3 my-4">
+                    <img src="/img/hex-minh-hoa.png" alt="Minh hoạ HEX" class="img-fluid custom-img">
+                  </div>
+                </li>
+                <li>
+                  <strong>Gắn kết với cảm xúc và tâm lý học màu sắc: </strong>Chỉ cần nhìn vào #FF0000 là người xem đã có thể cảm nhận sự nóng bỏng, mãnh liệt; còn #00FFCC mang lại cảm giác mát mẻ, nhẹ nhàng.
+                </li>
+                <li>
+                  <strong>Thương hiệu và bản sắc thị giác cũng bắt đầu từ mã HEX: </strong>Mỗi màu sắc đặc trưng đều có “mật mã riêng”, góp phần giúp thương hiệu trở nên nhất quán và dễ nhận diện hơn trên nền tảng số.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              Mã màu HEX được ứng dụng rộng rãi trong nhiều lĩnh vực, đặc biệt là:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Thiết kế giao diện người dùng (UI/UX)</strong>
+                </li>
+                <li>
+                  <strong>Xây dựng bộ nhận diện thương hiệu trực tuyến</strong>
+                </li>
+                <li>
+                  <strong>Phát triển giao diện web và ứng dụng di động</strong>
+                </li>
+                <li>
+                  <strong>Thiết kế đồ họa, in ấn kỹ thuật số, trình bày slide, v.v.</strong>
+                </li>
+              </ul>
+              <br>
+              Việc thành thạo mã HEX không chỉ giúp lập trình viên và nhà thiết kế làm việc hiệu quả hơn, mà còn mở ra khả năng truyền tải thông điệp trực quan một cách chính xác và nhất quán.
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình màu HEX là một trong những chuẩn mã hóa màu sắc quan trọng và bền vững nhất trong thế giới kỹ thuật số. Với sự kết hợp hài hòa giữa tính khoa học và nghệ thuật, HEX không chỉ giúp các hệ thống hiển thị chính xác màu sắc, mà còn là công cụ mạnh mẽ trong việc xây dựng trải nghiệm người dùng. Hiểu và sử dụng thành thạo mã HEX là bước đi đầu tiên để làm chủ ngôn ngữ thị giác trên mọi nền tảng số.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
@@ -690,10 +824,10 @@
     aria-labelledby="modalRGBLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalRGBLabel">Mô hình màu RGB</h5>
+          <h5 class="modal-title" id="modalRGBLabel">Mô hình màu RGB - Nền tảng ánh sáng trong hiển thị số</h5>
           <button
             type="button"
             class="btn-close"
@@ -701,10 +835,139 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          RGB (Red, Green, Blue) là mô hình màu cộng, mỗi kênh có giá trị từ 0
-          đến 255. Được dùng phổ biến trên màn hình máy tính, điện thoại và TV.
-          <br /><strong>Ví dụ:</strong> rgb(255, 0, 0) là màu đỏ.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Trong thế giới hiển thị kỹ thuật số, từ màn hình máy tính, điện thoại đến tivi và máy chiếu,
+              <b>RGB</b> là mô hình màu được sử dụng phổ biến nhất để tái tạo hình ảnh. Không giống như các mô hình 
+              màu dành cho in ấn (như CMYK), RGB hoạt động dựa trên nguyên lý <b>cộng ánh sáng</b> - nơi ba 
+              màu cơ bản đỏ (Red), xanh lá (Green) và xanh dương (Blue) được kết hợp với nhau để tạo nên 
+              dải màu phong phú. <br><br>
+              Việc hiểu mô hình RGB không chỉ là kiến thức nền tảng đối với lập trình viên, nhà thiết kế 
+              hay kỹ sư phần cứng mà còn là chìa khóa để kiểm soát màu sắc trên mọi loại thiết bị số hiện đại.
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              Mô hình RGB được xây dựng trên cơ sở ba thành phần ánh sáng: <b>Red - Green - Blue</b>. 
+              Mỗi thành phần có giá trị nằm trong khoảng từ 0 đến 255, thể hiện cường độ của ánh sáng 
+              tương ứng. Việc trộn ba ánh sáng này theo các tỷ lệ khác nhau sẽ tạo ra một màu mới. <br><br>
+              Ví dụ: 
+              <ul style="list-style-type:disc">
+                <li>(255, 0, 0) tạo ra màu đỏ tươi.</li>
+                <li>(0, 255, 0) là màu xanh lá.</li>
+                <li>(0, 0, 255) là xanh dương thuần.</li>
+                <li>(255, 255, 255) là màu trắng - khi cả ba kênh sáng cùng đạt mức tối đa.</li>
+                <li>(0, 0, 0) là màu đen - khi không có ánh sáng nào được phát ra.</li>
+              </ul> <br>
+              Khác với mô hình in ấn dựa trên việc <b>hấp thụ ánh sáng</b>, RGB là mô hình <b>phát xạ ánh sáng</b>, 
+              nên màu trắng là tổng hòa của ba nguồn sáng mạnh nhất, còn màu đen là khi tất cả bị tắt hoàn toàn.
+              <div class="container d-flex justify-content-evenly align-items-center flex-wrap gap-3 my-4">
+                <img src="/img/mo-hinh-rgb.png" alt="Mô hình rgb" class="img-fluid custom-img">
+                <img src="/img/bieu-dien-rgb.png" alt="Biểu diễn RGB dạng khối lập phương" class="img-fluid custom-img">
+              </div>
+              <br>
+              Hệ thống màu RGB có thể được biểu diễn dưới dạng một khối lập phương với 256 điểm rời rạc ở mỗi bên.
+            </p>
+
+            <strong>
+              <li>Ưu điểm và lý do phổ biến</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Chuẩn công nghiệp cho hiển thị số: </strong>Hầu hết các thiết bị kỹ thuật số đều dùng RGB để xử lý và hiển thị hình ảnh.
+                </li>
+                <li>
+                  <strong>Dải màu rộng và liên tục: </strong>RGB có thể tạo ra hơn 16 triệu màu, nhờ kết hợp 256 mức độ cho mỗi kênh.
+                </li>
+                <li>
+                  <strong>Trực quan khi điều chỉnh: </strong>Với người dùng quen thuộc, việc điều chỉnh từng thành phần RGB mang lại khả năng kiểm soát chính xác sắc thái mong muốn.
+                </li>
+              </ul>
+              <br>
+              Nhờ những đặc điểm này, RGB trở thành hệ màu mặc định trong các phần mềm xử lý hình ảnh, thiết kế đồ họa, phát triển game, dựng video và hơn thế nữa.
+            </p>
+
+            <strong>
+              <li>Hạn chế và thách thức</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Không phù hợp cho in ấn: </strong>Do RGB là mô hình phát xạ ánh sáng, nó không phản ánh đúng màu khi chuyển sang môi trường vật lý như giấy in - vốn cần các mô hình như CMYK.
+                </li>
+                <li>
+                  <strong>Dễ sai lệch màu giữa các thiết bị: </strong>Mỗi màn hình có khả năng tái tạo màu khác nhau, dẫn đến việc màu RGB có thể hiển thị không nhất quán nếu không có quy trình cân chỉnh (color calibration).
+                </li>
+              </ul>
+              <br>
+              Thêm vào đó, việc hiểu đúng bản chất cộng màu cũng là một rào cản với người mới, đặc biệt khi chuyển đổi giữa các không gian màu khác như HSV hay CMYK.
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về mô hình RGB</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>RGB là ngôn ngữ “gốc” của pixel: </strong>Mỗi điểm ảnh (pixel) trên màn hình số đều được mô tả bằng ba giá trị RGB - mỗi giá trị đại diện cho cường độ sáng tại vị trí đó.
+                </li>
+                <li>
+                  <strong>Có thể “vẽ” bằng HEX: </strong>Một số nghệ sĩ kỹ thuật số đã dùng mã HEX để tạo nên các tác phẩm nghệ thuật dạng pixel bằng HTML/CSS mà không cần dùng hình ảnh.
+                </li>
+                <li>
+                  <strong>Trắng không phải là màu - mà là sự phát sáng tối đa: </strong>Trong RGB, màu trắng không phải là một “màu sơn” mà là sự cộng dồn của ba ánh sáng mạnh nhất.
+                </li>
+                <li>
+                  <strong>Có thể dùng RGB để mô phỏng tâm trạng: </strong>Nhiều ứng dụng sử dụng RGB động (ví dụ đèn LED RGB, giao diện ứng dụng) để mô phỏng trạng thái cảm xúc: đỏ = cảnh báo, xanh lá = an toàn, xanh dương = bình tĩnh.
+                </li>
+                <li>
+                  <strong>Tồn tại nhiều “biến thể” của RGB: </strong>Trong thực tế, các thiết bị có thể sử dụng không gian màu sRGB, Adobe RGB hoặc Display P3 - mỗi loại mở rộng hoặc giới hạn dải màu RGB tùy vào mục đích sử dụng.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Xử lý ảnh và video kỹ thuật số</strong>
+                </li>
+                <li>
+                  <strong>Thiết kế giao diện người dùng (UI/UX)</strong>
+                </li>
+                <li>
+                  <strong>Phát triển giao diện web và ứng dụng di động</strong>
+                </li>
+                <li>
+                  <strong>Phát triển game và mô phỏng đồ họa</strong>
+                </li>
+                <li>
+                  <strong>Hệ thống LED chiếu sáng thông minh</strong>
+                </li>
+                <li>
+                  <strong>Hiệu ứng ánh sáng trong sân khấu, điện ảnh, thực tế ảo</strong>
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình màu RGB là nền tảng quan trọng trong mọi hệ thống hiển thị số. Nhờ nguyên lý cộng ánh sáng, RGB cho phép tái hiện dải màu phong phú, phục vụ mọi nhu cầu hình ảnh trong thế giới kỹ thuật số. Dù không phải là mô hình phù hợp với mọi ngữ cảnh (như in ấn vật lý), nhưng RGB vẫn là trụ cột trong thiết kế giao diện, hình ảnh, và truyền tải cảm xúc thị giác. Việc nắm vững RGB không chỉ giúp người làm kỹ thuật kiểm soát chính xác màu sắc, mà còn mở rộng khả năng sáng tạo và giao tiếp thông qua hình ảnh.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
@@ -717,10 +980,10 @@
     aria-labelledby="modalCMYKLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalCMYKLabel">Mô hình màu CMYK</h5>
+          <h5 class="modal-title" id="modalCMYKLabel">Mô hình màu CMYK - Sắc màu của thế giới in ấn</h5>
           <button
             type="button"
             class="btn-close"
@@ -728,10 +991,130 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          CMYK là mô hình màu trừ, gồm các kênh: Cyan (Xanh lơ), Magenta (Hồng),
-          Yellow (Vàng) và Key (Đen). Dùng phổ biến trong in ấn.
-          <br /><strong>Ví dụ:</strong> cmyk(0%, 100%, 100%, 0%) là màu đỏ.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Dù màu sắc trên màn hình có rực rỡ đến đâu, thì khi đưa vào thực tế - trên trang giấy, bao bì, 
+              poster hay bìa sách - chúng ta không thể chỉ dựa vào RGB hay HEX. Màu sắc trên màn hình là ánh 
+              sáng, còn màu trên giấy là sắc tố. Và để tái tạo được màu trong thế giới vật lý, cần một mô hình 
+              khác: <b>CMYK</b>.
+              <br><br>
+              CMYK không phải là đối thủ của RGB, mà là phần còn lại mà RGB không thể chạm tới - là ngôn ngữ 
+              của mực in, của sản phẩm thật. Trong khi RGB hoạt động dựa trên nguyên lý cộng ánh sáng, thì 
+              CMYK dựa trên nguyên lý <b>trừ màu</b>, phản ánh đúng cách mắt người cảm nhận màu sắc từ vật thể phản 
+              chiếu ánh sáng. Vì thế, với bất kỳ sản phẩm nào cần in ra, CMYK luôn là mô hình màu mặc định và 
+              tối ưu.
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              CMYK là viết tắt của bốn thành phần: <b>Cyan (xanh lơ), Magenta (hồng đỏ), Yellow (vàng) và Key 
+              (đen)</b>. Đây là các loại mực cơ bản được sử dụng trong in ấn để tạo nên hầu hết các màu sắc.
+              <br><br>
+              Khác với RGB - bắt đầu từ đen và cộng thêm ánh sáng để tạo màu - thì CMYK bắt đầu từ màu trắng 
+              (giấy trắng), sau đó <b>trừ đi ánh sáng</b> bằng cách phủ mực lên bề mặt. Việc pha trộn ba màu Cyan, 
+              Magenta và Yellow về mặt lý thuyết có thể tạo ra màu đen, nhưng trên thực tế, sự pha trộn này 
+              cho ra màu nâu xám. Do đó, <b>thành phần Key (đen)</b> được thêm vào để tăng độ sâu, độ tương phản và 
+              tiết kiệm chi phí in.
+              <br><br>
+              Ví dụ: 
+              <ul style="list-style-type:disc">
+                <li>(0%, 100%, 100%, 0%) → màu đỏ rực</li>
+                <li>(100%, 0%, 0%, 0%) → màu xanh lơ</li>
+                <li>(0%, 0%, 0%, 100%) → màu đen đậm</li>
+              </ul> <br>
+              <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3 my-4">
+                <img src="/img/mo-hinh-cmyk.png" alt="Mô hình cmyk" class="img-fluid custom-img">
+              </div>
+              <br>
+            </p>
+
+            <strong>
+              <li>Ưu điểm và ứng dụng đặc trưng</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Chính xác và tối ưu cho in ấn: </strong>CMYK cho phép thể hiện màu sắc đúng với thực tế in trên các chất liệu như giấy, nhựa, vải,...
+                </li>
+                <li>
+                  <strong>Hiển thị tốt trong điều kiện ánh sáng phản xạ: </strong>Vì mô hình dựa trên sự hấp thụ ánh sáng, nó phù hợp với mọi hình thức in không phát sáng (khác với RGB).
+                </li>
+                <li>
+                  <strong>Tiết kiệm chi phí in đen trắng: </strong>Việc sử dụng riêng kênh “Key” (đen) giúp giảm thiểu lượng mực màu cần thiết.
+                </li>
+              </ul>
+              <br>
+              Do đó, CMYK là tiêu chuẩn trong:
+              <ul style="list-style-type:disc">
+                <li>In ấn sách báo, tạp chí</li>
+                <li>Bao bì sản phẩm, nhãn mác</li>
+                <li>Áp phích quảng cáo, banner</li>
+                <li>Danh thiếp, tài liệu văn phòng</li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Hạn chế và khác biệt so với RGB</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Dải màu giới hạn hơn RGB: </strong>Một số màu hiển thị tốt trên màn hình (như xanh dạ quang, cam neon...) không thể in chính xác bằng CMYK.
+                </li>
+                <li>
+                  <strong>Chuyển đổi RGB → CMYK có thể gây sai lệch màu: </strong>Đây là lý do tại sao nhiều nhà thiết kế cần kiểm tra bản in thử (print proof) trước khi xuất bản chính thức.
+                </li>
+                <li>
+                  <strong>Phụ thuộc vào chất liệu và loại mực: </strong>Màu in có thể khác nhau tùy vào loại giấy, độ thấm mực hoặc công nghệ in.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về CMYK</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>CMYK tạo ra "màu thực" chứ không phải "ánh sáng ảo": </strong>Điều này khiến người dùng cảm thấy gần gũi, chân thực hơn khi tương tác với sản phẩm in.
+                </li>
+                <li>
+                  <strong>Không thể chuyển toàn bộ dải RGB sang CMYK: </strong>Có những màu "chỉ có thể nhìn thấy trên màn hình", nhưng không bao giờ in ra được giống hệt - hiện tượng này gọi là <i>gamut mismatch</i>.
+                </li>
+                <li>
+                  <strong>Tách màu CMYK là bước quan trọng trong thiết kế in chuyên nghiệp: </strong>Các phần mềm như Adobe Illustrator hay InDesign cho phép thiết kế viên kiểm soát từng lớp mực để đạt chất lượng in tối ưu.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              CMYK được sử dụng trong hầu hết các quy trình in thương mại và công nghiệp:
+              <ul style="list-style-type:disc">
+                <li>Xuất bản sách, tạp chí, catalogue</li>
+                <li>Thiết kế bao bì, nhãn mác sản phẩm</li>
+                <li>In quảng cáo ngoài trời: standee, poster, banner</li>
+                <li>In hóa đơn, sổ tay, tài liệu doanh nghiệp</li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình màu CMYK là lựa chọn không thể thiếu trong thế giới in ấn - nơi màu sắc không chỉ để nhìn, mà còn để chạm và cảm nhận. Dù không phù hợp cho các thiết bị hiển thị điện tử, CMYK vẫn giữ một vị trí không thể thay thế trong thiết kế đồ họa chuyên nghiệp và truyền thông thị giác vật lý. Việc hiểu rõ CMYK giúp người làm thiết kế kiểm soát chính xác quá trình chuyển giao từ bản vẽ số sang sản phẩm in thực tế, đảm bảo màu sắc không chỉ đẹp - mà còn đúng.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
@@ -744,10 +1127,10 @@
     aria-labelledby="modalHSLLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalHSLLabel">Mô hình màu HSL</h5>
+          <h5 class="modal-title" id="modalHSLLabel">Mô hình màu HSL - Cân bằng ánh sáng trong phối màu số</h5>
           <button
             type="button"
             class="btn-close"
@@ -755,10 +1138,140 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          HSL là viết tắt của Hue (sắc độ), Saturation (độ bão hòa), Lightness
-          (độ sáng). Dễ điều chỉnh và trực quan hơn RGB trong một số ứng dụng
-          thiết kế.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Trong thực hành thiết kế và xử lý màu sắc, sự khác biệt nhỏ giữa “sáng - tối”, “nhạt - đậm” 
+              có thể tạo ra hiệu ứng thị giác rất lớn. Tuy nhiên, không phải mô hình màu nào cũng cung cấp cho 
+              người dùng công cụ đủ trực quan để điều khiển hai yếu tố quan trọng này. <b>HSL</b> ra đời như một mô 
+              hình màu hướng tới <b>trục “ánh sáng trung tâm”</b>, nơi màu sắc được mô tả không chỉ bằng sắc 
+              độ và độ bão hòa mà còn thông qua <b>độ sáng (Lightness)</b> - phản ánh đúng cảm giác sáng tối 
+              của con người khi nhìn vào màu sắc.
+              <br><br>
+              Mô hình HSL (Hue - Saturation - Lightness) thường được sử dụng trong các phần mềm đồ họa, các 
+              hệ thống điều chỉnh màu nâng cao hoặc các giao diện yêu cầu người dùng thao tác chính xác về sắc 
+              thái thị giác.
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              HSL được xây dựng từ ba thành phần cơ bản:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Hue (H)</strong> - Sắc độ: Đại diện cho loại màu cơ bản (đỏ, xanh lá, xanh dương...), 
+                  thường được đo bằng góc trên vòng tròn màu (0°-360°).	
+                </li>
+                <li>
+                  <strong>Saturation (S)</strong> - Độ bão hòa: Biểu thị mức độ tinh khiết của màu, từ 0% (xám 
+                  - không có màu) đến 100% (màu gốc rõ nét).	
+                </li>
+                <li>
+                  <strong>Lightness (L)</strong> - Độ sáng: Thể hiện mức độ sáng tối của màu, từ 0% (đen hoàn 
+                  toàn) đến 100% (trắng hoàn toàn), với 50% là màu gốc không bị làm tối hay sáng.
+                </li>
+              </ul> <br>
+              Điểm đặc biệt của HSL là <b>trục “Lightness” nằm ở trung tâm</b>, giúp người dùng điều chỉnh độ sáng 
+              của màu một cách chính xác mà không làm thay đổi sắc độ hoặc độ bão hòa. Đây là điều khiến HSL 
+              khác biệt rõ rệt với HSV (trong đó độ sáng được đặt ở đáy hình nón và chịu ảnh hưởng của các yếu 
+              tố khác).
+              <div class="container d-flex justify-content-evenly align-items-center flex-wrap gap-3 my-4">
+                <img src="/img/hsl-white.png" alt="Mô hình HSL" class="img-fluid custom-img">
+                <img src="/img/hsl-black.png" alt="Mô hình HSL" class="img-fluid custom-img">
+              </div>
+            </p>
+
+            <strong>
+              <li>Ưu điểm và ứng dụng nổi bật</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Điều chỉnh màu chính xác theo độ sáng: </strong>Trong thiết kế giao diện tối/sáng (dark/light theme), việc thao tác với HSL cho phép duy trì sắc độ nhưng thay đổi độ sáng một cách hợp lý.
+                </li>
+                <li>
+                  <strong>Phù hợp với thiết kế theo hệ thống (systematic design): </strong>HSL hỗ trợ xây dựng bảng màu có tính nhất quán cao, đặc biệt khi cần tạo ra các cấp độ màu đồng nhất theo ánh sáng.
+                </li>
+                <li>
+                  <strong>Dễ thao tác trong lập trình giao diện hoặc xử lý ảnh động: </strong>Các thao tác như làm mờ sáng, tăng tương phản... có thể thực hiện trực tiếp thông qua việc tăng/giảm giá trị L.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Hạn chế và khác biệt so với các mô hình khác</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Không phải mô hình phần cứng tiêu chuẩn:</strong>Mặc dù hữu dụng về mặt giao diện, HSL không được phần cứng máy tính hoặc các thiết bị hiển thị hỗ trợ trực tiếp như RGB.
+                </li>
+                <li>
+                  <strong>Độ bão hòa bị ảnh hưởng bởi độ sáng ở mức cực đoan: </strong>Khi L tiến gần 0% hoặc 100%, mọi màu đều trở nên đen hoặc trắng - kể cả khi S vẫn ở mức cao.
+                </li>
+                <li>
+                  <strong>Chuyển đổi giữa RGB và HSL phức tạp hơn HSV: </strong>Do sự phân bố không gian màu trong HSL có phần phi tuyến tính, việc chuyển đổi đòi hỏi các thuật toán chính xác.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về HSL</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>HSL là mô hình cân bằng giữa cảm xúc và kỹ thuật: </strong>Việc điều chỉnh độ sáng trung tính (Lightness) giúp tạo ra các tông màu dễ chịu, có thể sử dụng xuyên suốt trong cả thiết kế in ấn và giao diện số.
+                </li>
+                <li>
+                  <strong>HSL thường được dùng để tạo bộ “gradient mềm”: </strong>Khi cần làm mờ màu theo ánh sáng mà không làm thay đổi sắc độ.
+                  <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3 my-4">
+                    <img src="/img/hsl-gradient.png" alt="Gradient mềm HSL" class="img-fluid custom-img w-100">
+                  </div>
+                </li>
+                <li>
+                  <strong>Nền tảng của nhiều hệ thống giao diện hiện đại: </strong>Một số framework giao diện sử dụng HSL để tạo ra hệ thống màu có thể mở rộng linh hoạt theo chủ đề.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Thiết kế hệ thống giao diện nhiều trạng thái (tối/sáng)</strong>
+                </li>
+                <li>
+                  <strong>Tạo bảng màu logic theo chiều sáng - từ nhẹ đến đậm</strong>
+                </li>
+                <li>
+                  <strong>Lập trình điều chỉnh màu trong hiệu ứng động hoặc hoạt hình số</strong>
+                </li>
+                <li>
+                  <strong>Xử lý ảnh, dựng phim, UI animation trong môi trường cần cảm quan ánh sáng nhất quán</strong>
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình màu HSL không phổ biến như RGB hay CMYK trong việc truyền dữ liệu hình ảnh, nhưng lại 
+              đóng vai trò quan trọng trong việc <b>kiểm soát cảm giác thị giác một cách chính xác và tinh tế</b>. 
+              Với ba thành phần riêng biệt: sắc độ, độ bão hòa và độ sáng - HSL cung cấp cho nhà thiết kế và 
+              lập trình viên một công cụ mạnh mẽ để thể hiện màu sắc phù hợp với trực giác người dùng, đặc 
+              biệt trong các ứng dụng hướng tới trải nghiệm thị giác tinh tế và có kiểm soát cao.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
@@ -771,10 +1284,10 @@
     aria-labelledby="modalHSVLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalHSVLabel">Mô hình màu HSV</h5>
+          <h5 class="modal-title" id="modalHSVLabel">Mô hình màu HSV - Cảm nhận màu sắc theo cách con người nghĩ</h5>
           <button
             type="button"
             class="btn-close"
@@ -782,10 +1295,127 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          HSV gồm Hue (sắc), Saturation (bão hòa), Value (giá trị độ sáng).
-          Tương tự HSL nhưng cách xác định độ sáng khác, dùng trong xử lý ảnh và
-          phần mềm đồ họa.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Không phải ai cũng nghĩ về màu sắc theo kiểu “đỏ: 255, xanh lá: 100, xanh dương: 20”. Con người, 
+              theo trực giác, thường mô tả màu sắc bằng các yếu tố như: <b>màu gì, đậm hay nhạt, sáng hay tối</b>. 
+              Đây chính là lý do mà <b>mô hình màu HSV</b> ra đời - nhằm biểu diễn màu sắc theo cách 
+              <i>gần với cảm nhận tự nhiên của con người</i> hơn là logic kỹ thuật.
+              <br><br>
+              HSV là viết tắt của <b>Hue (sắc độ), Saturation (độ bão hòa) và Value (giá trị độ sáng)</b>. Mô hình 
+              này được sử dụng rộng rãi trong các phần mềm đồ họa, bảng chọn màu (color picker) và các ứng 
+              dụng nơi người dùng cần điều chỉnh màu sắc một cách trực quan.
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              HSL được xây dựng từ ba thành phần cơ bản:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Hue (H): </strong>Đại diện cho sắc màu chính - được biểu diễn dưới dạng góc từ 0° đến 360° trên vòng tròn màu.
+                </li>
+                <li>
+                  <strong>Saturation (S): </strong>Mức độ tinh khiết của màu (0% là màu xám, 100% là màu gốc rực rỡ).
+                </li>
+                <li>
+                  <strong>Value (V): </strong>Độ sáng của màu (0% là đen hoàn toàn, 100% là sáng nhất).
+                </li>
+              </ul> <br>
+              Khác với RGB - nơi màu được tạo bằng cách pha trộn ba thành phần ánh sáng - HSV biểu diễn màu 
+              bằng <i>sắc thái</i>, <i>mức độ rực rỡ</i> và <i>độ sáng</i>, rất phù hợp với việc chỉnh màu 
+              bằng tay hoặc theo cảm quan.
+              <div class="container d-flex justify-content-center align-items-center flex-wrap gap-3 my-4">
+                <img src="/img/mo-hinh-hsv.png" alt="Mô hình HSV" class="img-fluid custom-img">
+              </div>
+            </p>
+
+            <strong>
+              <li>Ưu điểm và lý do được sử dụng</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Dễ điều chỉnh màu theo cảm giác thị giác: </strong>Người dùng không cần hiểu sâu về RGB vẫn có thể điều chỉnh chính xác độ tươi, độ đậm, độ tối của màu.
+                </li>
+                <li>
+                  <strong>Phù hợp với các công cụ tương tác: </strong>Bảng chọn màu (color picker) trong Photoshop, Figma, và các phần mềm thiết kế hiện đại đều sử dụng HSV vì tính trực quan.
+                </li>
+                <li>
+                  <strong>Tốt cho các bài toán xử lý ảnh: </strong>Trong thị giác máy tính, việc tách riêng độ sáng (V) khỏi màu sắc (H, S) giúp xử lý hiệu ứng ánh sáng hoặc phát hiện vật thể dễ hơn.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Hạn chế của mô hình HSV</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Không tuyến tính về mặt toán học: </strong>HSV không mô hình hóa không gian màu theo kiểu Euclide, nên một số phép biến đổi (như tính khoảng cách giữa hai màu) có thể thiếu chính xác.
+                </li>
+                <li>
+                  <strong>Không phù hợp để làm việc với dữ liệu phần cứng hoặc in ấn: </strong>Vì HSV không phản ánh đúng cường độ ánh sáng hay lượng mực như RGB hay CMYK.
+                </li>
+                <li>
+                  <strong>Không đồng nhất giữa các phần mềm: </strong>Một số ứng dụng có cách tính Hue, Saturation và Value hơi khác nhau, dẫn đến việc chuyển đổi không thống nhất giữa các hệ màu.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về HSV</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Giúp chọn màu theo cảm xúc: </strong>Bạn có thể chọn "màu đỏ rực" bằng cách tăng S và V, hoặc chọn "đỏ trầm" bằng cách giảm V - mà không cần quan tâm đến mã số RGB.
+                </li>
+                <li>
+                  <strong>Gần giống cách họa sĩ phối màu bằng mắt: </strong>Họ không nói “thêm 80 đơn vị đỏ”, mà nói “giảm độ tươi lại một chút”.
+                </li>
+                <li>
+                  <strong>HSV là nền tảng của nhiều hệ màu biến thể: </strong>Chẳng hạn như HSL (Hue, Saturation, Lightness), HSLA, hoặc HSB - tất cả đều lấy Hue làm trung tâm.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Bảng chọn màu trong phần mềm thiết kế: </strong>HSV là tiêu chuẩn trong Photoshop, Illustrator, CorelDRAW, Canva...
+                </li>
+                <li>
+                  <strong>Lập trình giao diện người dùng: </strong>Cho phép người dùng điều chỉnh màu mà không cần hiểu RGB.
+                </li>
+                <li>
+                  <strong>Xử lý ảnh và nhận dạng màu trong thị giác máy tính: </strong>Giúp tăng hiệu quả khi cần loại bỏ vùng sáng, bóng, hoặc phát hiện màu chính xác hơn RGB.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình màu HSV không mang tính “kỹ thuật” như RGB hay “vật lý in ấn” như CMYK, mà tập trung 
+              vào <i>trực giác của người sử dụng</i>. Nhờ cấu trúc dựa trên sắc độ, độ đậm và độ sáng, HSV mang đến 
+              một cách tiếp cận gần gũi hơn, đặc biệt hữu ích trong các thao tác chọn màu, phối màu và xử lý 
+              hình ảnh. Việc nắm bắt HSV là một bước quan trọng đối với bất kỳ ai làm việc trong lĩnh vực 
+              thiết kế, chỉnh sửa ảnh hoặc phát triển ứng dụng giao diện người dùng.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
@@ -798,10 +1428,10 @@
     aria-labelledby="modalYIQLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalYIQLabel">Mô hình màu YIQ</h5>
+          <h5 class="modal-title" id="modalYIQLabel">Mô hình màu YIQ - Tối ưu truyền hình và xử lý độ sáng</h5>
           <button
             type="button"
             class="btn-close"
@@ -809,10 +1439,134 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-body">
-          YIQ là mô hình dùng trong truyền hình analog của Mỹ. Bao gồm Y (độ
-          sáng), I và Q (thông tin màu). Y cho phép hiển thị trắng đen tốt trên
-          TV đen trắng.
+        <div class="modal-body ps-0">
+          <ol class="text-justify-custom">
+            <strong>
+              <li>Giới thiệu chung</li>
+            </strong>
+            <p>
+              Khi nhắc đến các mô hình màu trong xử lý ảnh, phần lớn người học và nhà phát triển sẽ nghĩ ngay 
+              đến RGB, HSV hay CMYK. Tuy nhiên, trong lĩnh vực truyền hình analog - đặc biệt tại Hoa Kỳ - một 
+              mô hình màu khác lại đóng vai trò thiết yếu: <b>YIQ</b>. Ra đời cùng với tiêu chuẩn truyền hình NTSC 
+              (National Television System Committee), YIQ được thiết kế nhằm <b>đảm bảo khả năng truyền màu sắc 
+              hiệu quả qua tín hiệu điện tử</b>, đồng thời vẫn <b>tương thích ngược với các tivi đen trắng thời kỳ 
+              trước</b>.
+              <br><br>
+              Mô hình YIQ là một ví dụ tiêu biểu cho cách kỹ thuật số hóa màu sắc không chỉ dựa trên cảm quan 
+              mà còn tối ưu theo đặc tính sinh lý thị giác và băng thông truyền dẫn. Dù không còn phổ biến 
+              trong hệ thống hiện đại, YIQ vẫn là một bước ngoặt quan trọng trong lịch sử phát triển của kỹ 
+              thuật truyền hình và xử lý tín hiệu màu.
+            </p>
+            
+
+            <strong>
+              <li>Cấu trúc và nguyên lý hoạt động</li>
+            </strong>
+            <p>
+              Mô hình YIQ bao gồm ba thành phần:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Y (Luminance): </strong>Thành phần độ sáng (luminance), tương ứng với khả năng cảm nhận độ sáng của mắt người. Đây cũng là phần duy nhất được sử dụng trong các thiết bị hiển thị đen trắng.
+                </li>
+                <li>
+                  <strong>I (In-phase chrominance): </strong>Thành phần màu sắc theo trục đỏ - lam, ảnh hưởng đến màu cam và tím.
+                </li>
+                <li>
+                  <strong>Q (Quadrature chrominance): </strong>Thành phần màu sắc theo trục xanh - vàng, ảnh hưởng đến các tông màu xanh lá và đỏ.
+                </li>
+              </ul> <br>
+              Cả ba thành phần này được tính toán từ RGB qua hệ phương trình tuyến tính, trong đó <b>Y được tính 
+              ưu tiên hơn cả</b>, vì mắt người nhạy hơn với độ sáng so với thông tin màu.
+              <br><br>
+              Công thức chuyển đổi từ RGB sang YIQ: <br>
+              Y = 0.299R + 0.587G + 0.114B  <br>
+              I = 0.596R - 0.274G - 0.322B  <br>
+              Q = 0.211R - 0.523G + 0.312B <br>
+              Trong đó, các giá trị RGB được chuẩn hóa trong khoảng [0, 1].
+            </p>
+
+            <strong>
+              <li>Ưu điểm và ứng dụng nổi bật</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Tách biệt rõ độ sáng và màu sắc: </strong>Nhờ phần Y độc lập, việc xử lý độ sáng (chỉnh độ tương phản, làm mờ, tăng sáng) không làm ảnh hưởng đến màu sắc tổng thể - một ưu thế rõ rệt khi xử lý ảnh.
+                </li>
+                <li>
+                  <strong>Tối ưu cho truyền dẫn tín hiệu video: </strong>Thành phần I và Q chiếm ít băng thông hơn Y nên có thể bị nén mà không ảnh hưởng nhiều đến chất lượng hình ảnh - dựa trên sinh lý thị giác.
+                </li>
+                <li>
+                  <strong>Tương thích ngược với truyền hình đen trắng: </strong>Màn hình chỉ cần tín hiệu Y để hiển thị hình ảnh, trong khi tivi màu nhận đủ cả Y, I, Q để tái tạo màu đầy đủ.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Hạn chế và lí do ít được dùng hiện nay</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Không trực quan với người dùng phổ thông: </strong>Không giống như RGB hay HSV, mô hình YIQ không phản ánh màu sắc theo cách dễ hình dung hoặc dễ điều chỉnh bằng mắt người.
+                </li>
+                <li>
+                  <strong>Giới hạn trong hệ thống truyền hình cũ (NTSC): </strong>Các hệ thống hiện đại như PAL, SECAM hay truyền hình số (digital TV, HDTV) không sử dụng YIQ.
+                </li>
+                <li>
+                  <strong>Ít được hỗ trợ trong các phần mềm thiết kế hiện nay: </strong>Hầu hết các phần mềm xử lý ảnh, đồ họa hiện đại đều ưu tiên RGB, HSL hoặc LAB.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Những điều thú vị về YIQ</li>
+            </strong>
+            <p>
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Mắt người nhạy với độ sáng hơn màu sắc: </strong>Đây là lý do vì sao tín hiệu Y - thành phần độ sáng - được truyền với độ chính xác cao, còn hai thành phần màu I và Q có thể bị nén mà mắt vẫn khó phát hiện ra.
+                </li>
+                <li>
+                  <strong>Chỉ cần thành phần Y đã có thể tạo ảnh đen trắng:</strong>Điều này giúp tiết kiệm đáng kể chi phí truyền dẫn và mở rộng khả năng tiếp cận thời kỳ đầu của truyền hình.
+                </li>
+                <li>
+                  <strong>YIQ là nền tảng của tư duy tách kênh sáng - màu: </strong>Sau này được kế thừa trong các mô hình hiện đại như YUV, YCbCr, dùng trong MPEG, JPEG và hệ thống mã hóa video.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Ứng dụng thực tế</li>
+            </strong>
+            <p>
+              Dù không còn phổ biến trong công nghệ hiện đại, YIQ vẫn để lại dấu ấn trong:
+              <ul style="list-style-type:disc">
+                <li>
+                  <strong>Truyền hình analog tiêu chuẩn NTSC (Hoa Kỳ, Nhật Bản, Hàn Quốc thời kỳ đầu)</strong>
+                </li>
+                <li>
+                  <strong>Xử lý ảnh theo kênh độ sáng độc lập: </strong>Một số thuật toán làm sắc nét, làm mịn, hay phân đoạn ảnh vẫn sử dụng kênh Y từ YIQ hoặc YUV để đạt hiệu quả thị giác cao.
+                </li>
+                <li>
+                  <strong>Nghiên cứu và giảng dạy kỹ thuật số hóa tín hiệu màu: </strong>YIQ là mô hình nền tảng để sinh viên ngành kỹ thuật điện - điện tử, công nghệ thông tin hiểu về cách tín hiệu hình ảnh được mã hóa và truyền dẫn.
+                </li>
+              </ul>
+            </p>
+
+            <strong>
+              <li>Kết luận</li>
+            </strong>
+            <p>
+              Mô hình YIQ là một ví dụ tiêu biểu về cách tối ưu hóa mô hình màu cho mục tiêu truyền dẫn 
+              tín hiệu và khả năng cảm nhận của con người. Dù đã dần được thay thế bởi các hệ màu hiện đại 
+              hơn, YIQ vẫn đóng vai trò lịch sử quan trọng trong sự phát triển của truyền hình màu và kỹ 
+              thuật xử lý hình ảnh. Việc hiểu rõ mô hình YIQ không chỉ giúp nắm vững kiến thức nền về hệ 
+              thống truyền hình analog, mà còn góp phần hiểu sâu về sự phân tách độ sáng - màu sắc trong 
+              các hệ màu số hiện đại ngày nay.
+            </p>
+          </ol>
+          
         </div>
       </div>
     </div>
